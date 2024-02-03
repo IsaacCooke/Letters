@@ -1,0 +1,10 @@
+^D:\DOCUMENTS\LETTERS\CMAKEFILES\D857FC77FD44D714F6EF84D117A5FFA9\GENERATE.STAMP.RULE
+setlocal
+D:\SDKs\CMake\bin\cmake.exe -SD:/Documents/Letters -BD:/Documents/Letters --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file D:/Documents/Letters/letters.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

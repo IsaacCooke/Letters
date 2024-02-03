@@ -1,0 +1,25 @@
+# CMake generation dependency list for this directory.
+D:/Documents/Letters/CMakeFiles/3.26.3/CMakeCXXCompiler.cmake
+D:/Documents/Letters/CMakeFiles/cmake.verify_globs
+D:/Documents/Letters/_deps/raylib-src/CMakeLists.txt
+D:/Documents/Letters/_deps/raylib-src/CMakeOptions.txt
+D:/Documents/Letters/_deps/raylib-src/cmake/AddIfFlagCompiles.cmake
+D:/Documents/Letters/_deps/raylib-src/cmake/BuildOptions.cmake
+D:/Documents/Letters/_deps/raylib-src/cmake/CompilerFlags.cmake
+D:/Documents/Letters/_deps/raylib-src/cmake/EnumOption.cmake
+D:/Documents/Letters/_deps/raylib-src/cmake/Uninstall.cmake
+D:/SDKs/CMake/share/cmake-3.26/Modules/CMakeCXXInformation.cmake
+D:/SDKs/CMake/share/cmake-3.26/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake
+D:/SDKs/CMake/share/cmake-3.26/Modules/CMakeCommonLanguageInclude.cmake
+D:/SDKs/CMake/share/cmake-3.26/Modules/CMakeDependentOption.cmake
+D:/SDKs/CMake/share/cmake-3.26/Modules/CMakeLanguageInformation.cmake
+D:/SDKs/CMake/share/cmake-3.26/Modules/CheckCCompilerFlag.cmake
+D:/SDKs/CMake/share/cmake-3.26/Modules/CheckCSourceCompiles.cmake
+D:/SDKs/CMake/share/cmake-3.26/Modules/Compiler/CMakeCommonCompilerMacros.cmake
+D:/SDKs/CMake/share/cmake-3.26/Modules/Compiler/MSVC-CXX.cmake
+D:/SDKs/CMake/share/cmake-3.26/Modules/Compiler/MSVC.cmake
+D:/SDKs/CMake/share/cmake-3.26/Modules/Internal/CheckCompilerFlag.cmake
+D:/SDKs/CMake/share/cmake-3.26/Modules/Internal/CheckFlagCommonConfig.cmake
+D:/SDKs/CMake/share/cmake-3.26/Modules/Internal/CheckSourceCompiles.cmake
+D:/SDKs/CMake/share/cmake-3.26/Modules/Platform/Windows-MSVC-CXX.cmake
+D:/SDKs/CMake/share/cmake-3.26/Modules/Platform/Windows-MSVC.cmake
