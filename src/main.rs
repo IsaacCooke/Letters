@@ -5,6 +5,8 @@ use macroquad::{
 
 #[macroquad::main("Letters Game")]
 async fn main() {
+    let complete: bool = false;
+
     let x = screen_width() / 2.0;
     let y = screen_width() / 2.0;
 
@@ -30,7 +32,7 @@ async fn main() {
         }
         movement = normalize(movement);
 
-        spawn_ui();
+        spawn_game_ui(&complete);
 
         ball_position.x += movement.x;
         ball_position.y += movement.y;
@@ -40,22 +42,32 @@ async fn main() {
     }
 }
 
-fn spawn_ui() {
-    widgets::Window::new(hash!(), vec2(470.0, 50.0), vec2(300.0, 300.0))
-        .label("Test Window")
-        .ui(&mut *root_ui(), |ui| {
-            ui.label(None, "Some text");
-            if ui.button(None, "Click Me!") {
-                println!("Hello World");
-            }
+fn spawn_game_ui(complete: &bool) {
+    if *complete {
+        widgets::Window::new(hash!(), vec2(500.0, 50.0), vec2(300.0, 300.0)).ui(
+            &mut *root_ui(),
+            |ui| {
+                ui.label(None, "C");
 
-            ui.separator();
+                ui.label(None, "A");
 
-            ui.label(None, "More text");
-            if ui.button(None, "Click Me!") {
-                println!("Hello Word (again)!");
-            }
-        });
+                if ui.button(None, "T") {
+                    println!("Well Done!");
+                }
+
+                if ui.button(None, "Z") {
+                    println!("You got it WRONG! No one loves you and your life is a failure!");
+                }
+            },
+        );
+    } else {
+        widgets::Window::new(hash!(), vec(500.0, 50.0), vec2(300.0, 300.0)).ui(
+            &mut *root_ui(),
+            |ui| {
+                ui.label(None, "Well Done! You have won");
+            },
+        );
+    }
 }
 
 fn normalize(v: Vec2) -> Vec2 {
