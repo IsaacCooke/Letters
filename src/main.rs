@@ -3,9 +3,15 @@ use macroquad::{
     ui::{hash, root_ui, widgets},
 };
 
+enum State {
+    Playing,
+    Won,
+    Lost,
+}
+
 #[macroquad::main("Letters Game")]
 async fn main() {
-    let complete: bool = false;
+    let mut game_state: State = State::Playing;
 
     let x = screen_width() / 2.0;
     let y = screen_width() / 2.0;
@@ -32,7 +38,7 @@ async fn main() {
         }
         movement = normalize(movement);
 
-        spawn_game_ui(&complete);
+        spawn_game_ui(&mut game_state);
 
         ball_position.x += movement.x;
         ball_position.y += movement.y;
@@ -42,9 +48,9 @@ async fn main() {
     }
 }
 
-fn spawn_game_ui(complete: &bool) {
-    if *complete {
-        widgets::Window::new(hash!(), vec2(500.0, 50.0), vec2(300.0, 300.0)).ui(
+fn spawn_game_ui(state: &mut State) {
+    match *state {
+        State::Playing => widgets::Window::new(hash!(), vec2(500.0, 50.0), vec2(300.0, 300.0)).ui(
             &mut *root_ui(),
             |ui| {
                 ui.label(None, "C");
@@ -53,21 +59,37 @@ fn spawn_game_ui(complete: &bool) {
 
                 if ui.button(None, "T") {
                     println!("Well Done!");
+                    *state = State::Won;
                 }
 
                 if ui.button(None, "Z") {
                     println!("You got it WRONG! No one loves you and your life is a failure!");
+                    *state = State::Lost;
                 }
             },
-        );
-    } else {
-        widgets::Window::new(hash!(), vec(500.0, 50.0), vec2(300.0, 300.0)).ui(
+        ),
+
+        State::Won => widgets::Window::new(hash!(), vec2(500.0, 50.0), vec2(300.0, 300.0)).ui(
             &mut *root_ui(),
             |ui| {
                 ui.label(None, "Well Done! You have won");
+
+                if ui.button(None, "Play again") {
+                    *state = State::Playing;
+                }
             },
-        );
-    }
+        ),
+        State::Lost => widgets::Window::new(hash!(), vec2(500.0, 50.0), vec2(300.0, 300.0)).ui(
+            &mut *root_ui(),
+            |ui| {
+                ui.label(None, "You have lost. Your entire life is a failure!");
+
+                if ui.button(None, "Play again") {
+                    *state = State::Playing;
+                }
+            },
+        ),
+    };
 }
 
 fn normalize(v: Vec2) -> Vec2 {
