@@ -15,12 +15,10 @@ pub fn spawn_game_ui(state: &mut State) {
                 ui.label(None, "A");
 
                 if ui.button(None, "T") {
-                    println!("Well Done!");
                     *state = State::Won;
                 }
 
                 if ui.button(None, "Z") {
-                    println!("You got it WRONG! No one loves you and your life is a failure!");
                     *state = State::Lost;
                 }
             },
