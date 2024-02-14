@@ -1,4 +1,7 @@
+// External imports
 import 'package:flutter/material.dart';
+
+// Local imports
 import 'package:letters/pages/layout.dart';
 
 void main() {
