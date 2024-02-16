@@ -1,5 +1,7 @@
+// External imports
 import 'package:flutter/material.dart';
 
+// Local imports
 import 'package:letters/pages/home.dart';
 import 'package:letters/pages/settings.dart';
 
