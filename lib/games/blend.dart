@@ -11,12 +11,24 @@ class BlendGameState extends State<BlendGame> {
 
   final List<String> _target = ["s", "a", "t"];
 
-  final List<String> _shuffledTarget = _target.shuffle();
+  final List<String> _shuffledTarget = ["a", "s", "t"];
 
   List<String> boxText = ["", "", ""];
 
+  int indexReached = 0;
+
   void _updateText(String c){
-    print("Updated");
+    print("Updated at index $indexReached");
+    boxText[indexReached] = c;
+    if (indexReached >= 2) {
+      if (boxText == _target) {
+        print("Game complete!");
+      } else {
+        print("Game failed");
+      }
+    } else {
+      indexReached++;
+    }
   }
 
   @override
