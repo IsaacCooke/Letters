@@ -10,7 +10,7 @@ class Settings extends StatefulWidget {
 
 class SettingsState extends State<Settings> {
   @override
-  Widget build(BuildContext context){
+  Widget build(BuildContext context) {
     return const Scaffold(
       body: Text(
         "Settings page",
